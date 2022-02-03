@@ -2,6 +2,8 @@ package com.LW.test;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.AssertJUnit;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -27,9 +29,12 @@ public class checklist7  extends LWBaseClass{
 		js.executeScript(c);
 		dc.ProceedtoPurchaseButton();
 		dc.Edit();
+		Thread.sleep(1000);
 		String d="window.scrollTo(0,document.body.scrollHeight)";
 		js.executeScript(d);
-		
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@value=\"Proceed to Purchase\"]")));
+		String e="window.scrollTo(0,document.body.scrollHeight)";
 		dc.ProceedtoPurchaseButton();
 		dc.MyAccount();
 		

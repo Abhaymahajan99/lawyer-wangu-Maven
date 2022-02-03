@@ -13,7 +13,7 @@ public class Document {
 	@FindBy(xpath="//input[@placeholder=\"Enter the amont\"]")
 	private WebElement Amount;
 	
-	@FindBy(name="next")
+	@FindBy(xpath="//input[@id='page-next-1']")
 	private WebElement nextbutton;
 	
 	@FindBy(xpath="//input[@value=\"Proceed to Purchase\"]")
@@ -35,6 +35,7 @@ public class Document {
 		
 		FullName.sendKeys("Test user");
 		Amount.sendKeys("5000");
+		Thread.sleep(2000);
 		nextbutton.click();
 		Thread.sleep(2000);
 	}

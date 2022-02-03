@@ -11,6 +11,7 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -312,8 +313,6 @@ public class lwFullCheckList extends LWBaseClass {
 		public void Cheklist7_IndividualUser_TillPreviewPage() throws InterruptedException, IOException   {
 			
 			ExtentTest = extent.startTest(" Cheklist7_IndividualUser_TillPreviewPage");
-			
-			
 
 			//driver.get("https://devstaging.lawyerwangu.com/lw/auto");
 			
@@ -327,9 +326,12 @@ public class lwFullCheckList extends LWBaseClass {
 			js.executeScript(c);
 			dc.ProceedtoPurchaseButton();
 			dc.Edit();
+			Thread.sleep(1000);
 			String d="window.scrollTo(0,document.body.scrollHeight)";
 			js.executeScript(d);
-			
+			Thread.sleep(1000);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@value=\"Proceed to Purchase\"]")));
+			String e="window.scrollTo(0,document.body.scrollHeight)";
 			dc.ProceedtoPurchaseButton();
 			dc.MyAccount();
 			
@@ -340,8 +342,7 @@ public class lwFullCheckList extends LWBaseClass {
 
 			
 		}
-		
-		
+
 			@Test(priority=4)
 			public void Cheklist8_InternalUser_TillPreviewPage() throws InterruptedException, IOException  { 
 				

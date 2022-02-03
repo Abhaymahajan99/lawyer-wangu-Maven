@@ -51,7 +51,7 @@ public class LWBaseClass {
 
 	static {
 
-		System.setProperty("webdriver.chrome.driver", "/Users/activemac03/Downloads/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/home/abhay/Downloads/chromedriver");
 		System.setProperty("webdriver.gecko.driver", "/driver/geckodriver");
 		System.getProperty("webdriver.edge.driver", "/driver/msedgedriver");
 	}

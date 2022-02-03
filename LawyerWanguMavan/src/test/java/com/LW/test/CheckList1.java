@@ -29,7 +29,7 @@ public class CheckList1 extends LWBaseClass {
         
 		AssertJUnit.assertTrue(true==true);
 		
-		//sa.assertAll(); 
+	sa.assertAll(); 
 		
 	
 		

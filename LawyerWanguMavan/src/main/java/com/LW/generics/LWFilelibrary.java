@@ -21,7 +21,7 @@ public class LWFilelibrary {
 	 */
 	
 	public String getPropertyData(String key) throws IOException {
-	FileInputStream fis=new FileInputStream("/Users/activemac03/eclipse-workspace/LawyerWanguMavan/src/test/resources/Data/commondata.properties1");
+	FileInputStream fis=new FileInputStream("/home/abhay/git/lawyer-wangu-Maven/LawyerWanguMavan/src/test/resources/Data/commondata.properties1");
 	Properties p=new Properties();
 	p.load(fis);
 	String data = p.getProperty(key);
@@ -40,7 +40,7 @@ public class LWFilelibrary {
 	 */
 
 	public String getExcelData(String sheetname,int row,int cell) throws EncryptedDocumentException, IOException {
-		FileInputStream fis =new FileInputStream("/Users/activemac03/eclipse-workspace/LawyerWanguMavan/src/test/resources/Data/commondata.properties1");
+		FileInputStream fis =new FileInputStream("/home/abhay/git/lawyer-wangu-Maven/LawyerWanguMavan/src/test/resources/Data/commondata.properties1");
 		Workbook wb = WorkbookFactory.create(fis);
 		String data=wb.getSheet(sheetname).getRow(row).getCell(cell).toString();
 	    return data;

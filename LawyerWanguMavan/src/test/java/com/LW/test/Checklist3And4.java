@@ -39,9 +39,10 @@ public class Checklist3And4 extends LWBaseClass {
 		action.moveToElement(catalog).moveToElement(Products).click().build().perform();
 		
 		d.EQuestionnaire();
+		
 		d.OldDocumentEQuestionnaire();
 		
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		//driver.get("https://devstaging.lawyerwangu.com");
 		String Url = f.getPropertyData("url");
 		driver.get(Url);

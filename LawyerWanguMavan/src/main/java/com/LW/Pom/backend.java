@@ -27,7 +27,7 @@ public class backend {
 	@FindBy(xpath = "//a[.=\"STEP 1\"]")
 	private WebElement STEP;
 	
-	@FindBy(xpath = "(//button[.=\"Exit\"])[2]")
+	@FindBy(xpath = "//button[@id='cancel_edit']")
 	private WebElement Exit;
 	
 	@FindBy(xpath = "//a[.=\">>\"]")
@@ -39,13 +39,13 @@ public class backend {
 	@FindBy(xpath = "//a[.=\"STEP 1\"]")
 	private WebElement STEP2;
 	
-	@FindBy(xpath = "(//button[.=\"Exit\"])[2]")
+	@FindBy(xpath = "//button[@id='cancel_edit']")
 	private WebElement Exit2;
 	
 	@FindBy(xpath = "(//a[.=\"Document\"])[1]")
 	private WebElement Document;
 	
-	@FindBy(xpath = "//button[.=\"Exit\"]")
+	@FindBy(xpath = "//button[@id='cancel_edit']")
 	private WebElement DocumentExit;
 	
 	@FindBy(xpath = "//span[@class=\"logoe\"]")
@@ -70,10 +70,12 @@ public class backend {
 		MyAccount.click();
 	}
 	
-	public void EQuestionnaire() {
+	public void EQuestionnaire() throws InterruptedException {
 	
 	EQues.click();
 	STEP.click();
+	Thread.sleep(1000);
+	
 	Exit.click();
 	
 	}
@@ -84,10 +86,10 @@ public class backend {
 		
 		EQues2.click();
 		
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		STEP2.click();
-		
+		Thread.sleep(1000);
 		Exit2.click();
 		
 		
