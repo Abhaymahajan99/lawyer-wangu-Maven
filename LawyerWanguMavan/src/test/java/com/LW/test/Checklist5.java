@@ -1,5 +1,6 @@
 package com.LW.test;
 
+import org.testng.annotations.Test;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
