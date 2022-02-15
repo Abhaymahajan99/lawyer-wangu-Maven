@@ -3,13 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      
-      <class name="com.LW.test.checklist8"/>
-      <class name="com.LW.test.checklist7"/>
-      <class name="com.LW.test.CheckList1"/>
-      <class name="com.LW.test.Checklist5"/>
-      <class name="com.LW.test.Checklist3And4"/>
-      <class name="com.LW.test.Checklist2"/>
+     
+      <class name="com.LW.test.lwFullCheckList"/>
+     
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
