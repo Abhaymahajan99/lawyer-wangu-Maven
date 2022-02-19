@@ -1,58 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.LW.test.Checklist5">
-        <methods>
-          <include name="Checklist5_BackEndBasicFunctionality"/>
-          <include name="closeBrowser"/>
-          <include name="login"/>
-          <include name="openBrowser"/>
-          <include name="logout"/>
-          <include name="LWUtility"/>
-        </methods>
-      </class> <!-- com.LW.test.Checklist5 -->
-      <class name="com.LW.test.Checklist3And4">
-        <methods>
-          <include name="Checklist3and4_backend_EQuestionnaireForNewAndOldDocument"/>
-          <include name="closeBrowser"/>
-          <include name="login"/>
-          <include name="openBrowser"/>
-          <include name="logout"/>
-          <include name="LWUtility"/>
-        </methods>
-      </class> <!-- com.LW.test.Checklist3And4 -->
-      <class name="com.LW.test.checklist7">
+      <class name="com.LW.test.CheckMyAccountUI">
         <methods>
           <include name="closeBrowser"/>
           <include name="login"/>
           <include name="openBrowser"/>
           <include name="logout"/>
-          <include name="Cheklist7_IndividualUser_TillPreviewPage"/>
+          <include name="TestMyAccount"/>
           <include name="LWUtility"/>
         </methods>
-      </class> <!-- com.LW.test.checklist7 -->
-      <class name="com.LW.test.Checklist2">
-        <methods>
-          <include name="Checklist2_backend"/>
-          <include name="closeBrowser"/>
-          <include name="login"/>
-          <include name="openBrowser"/>
-          <include name="logout"/>
-          <include name="LWUtility"/>
-        </methods>
-      </class> <!-- com.LW.test.Checklist2 -->
-      <class name="com.LW.test.CheckList1">
-        <methods>
-          <include name="closeBrowser"/>
-          <include name="login"/>
-          <include name="openBrowser"/>
-          <include name="Checklist1_InternalLogin"/>
-          <include name="logout"/>
-          <include name="LWUtility"/>
-        </methods>
-      </class> <!-- com.LW.test.CheckList1 -->
+      </class> <!-- com.LW.test.CheckMyAccountUI -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

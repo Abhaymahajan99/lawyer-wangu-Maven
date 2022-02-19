@@ -26,7 +26,9 @@ public class Checklist2 extends LWBaseClass{
 
 		String un = f.getPropertyData("AdminUserName");
 		String pw =f.getPropertyData("AdminPassword"); 
+		
 		backend d=new backend(driver);
+		
 		d.adminlogin(un, pw);
 
 

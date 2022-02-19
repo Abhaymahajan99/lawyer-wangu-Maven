@@ -54,29 +54,44 @@ public class MyAccount {
 	@FindBy(xpath = "//a[@name=\"submitted\"]")
 	private WebElement SaveDetails;
 
+
+	@FindBy(xpath="(//button [.=\"Remove\"])[1]")
+	private WebElement RemoveContect;
+
+	@FindBy(id="remove-details")
+	private WebElement RemoveDetailsYes;
+
+
+	@FindBy(id="modal_dismiss")
+	private WebElement ModalDismissNo;
+
+	@FindBy(xpath="//a[.=\"Completed Documents\"]")
+	private WebElement CompletedDocuments1;
 	
-	  @FindBy(xpath="(//button [.=\"Remove\"])[1]")
-	 
-	  private WebElement RemoveContect;
-	 
-	  @FindBy(id="remove-details")
-	 
-	  private WebElement RemoveDetailsYes;
-	 
-	 
-	  @FindBy(id="modal_dismiss")
-	 
-	  private WebElement ModalDismissNo;
-	  
-	  @FindBy(xpath="//button[@id=\"remove-details\"]")
-		 
-	  private WebElement Yes;
-	 
+	@FindBy(xpath="(//a[@class=\"download download_btn\"])[1]")
+	private WebElement downloadDocuments;
+
+	@FindBy(xpath="(//a[.=\"Download Invoice\"])[1]")
+	private WebElement DownloadInvoice;
+	
+	@FindBy(xpath="//a[.=\"Saved For Later\"]")
+	private WebElement SavedForLater1;
+	
+	@FindBy(xpath="//a[.=\"Pending Document\"]")
+	private WebElement PendingDocument;
+	
+	@FindBy(xpath="//a[.=\"Document cart\"]")
+	private WebElement Documentcart1;
+	
+	@FindBy(xpath="//a[.=\"Profile\"]")
+	private WebElement Profile1;
 
 	public MyAccount(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-
+public void myAccount() {
+	MyAccount.click();
+}
 	public void Details() throws InterruptedException {
 		MyAccount.click();
 		AdrressBook.click();
@@ -112,13 +127,38 @@ public class MyAccount {
 		SaveDetails.click();
 	}
 
-	public void removecontect() throws InterruptedException {
+	public void removecontect() throws Throwable   {
 
 		Thread.sleep(2000);
 		RemoveContect.click();
-		 RemoveDetailsYes.click();
-		 Yes.click();
-		// ModalDismissNo.click();
-
+		RemoveDetailsYes.click();
+		 //ModalDismissNo.click();
 	}
+	
+	
+	public void checkCompletedDocuments() {
+		
+		CompletedDocuments1.click();
+		downloadDocuments.click();
+		DownloadInvoice.click();
+		
+	}
+	
+	public void SavedForLater() {
+		SavedForLater1.click();
+		PendingDocument.click();
+		
+	}
+	
+	public void Documentcart() {
+		Documentcart1.click();
+		PendingDocument.click();
+		
+	}
+	public void Profile() {
+		Profile1.click();
+		
+	}
+	
+	
 }

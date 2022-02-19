@@ -393,8 +393,8 @@ public class lwFullCheckList extends LWBaseClass {
 
 			}
 			
-			@Test(priority=5)
-			public void TestMyAccount() throws InterruptedException, IOException  { 
+			@Test(enabled=false)
+			public void TestMyAccount() throws Throwable  { 
 			ExtentTest = extent.startTest(" TestsMyAccount");
 			
 			Thread.sleep(500);
