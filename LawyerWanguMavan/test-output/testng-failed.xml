@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.LW.test.CheckMyAccountUI">
+      <class name="com.LW.test.Checklist5">
         <methods>
+          <include name="Checklist5_BackEndBasicFunctionality"/>
           <include name="closeBrowser"/>
           <include name="login"/>
           <include name="openBrowser"/>
           <include name="logout"/>
-          <include name="TestMyAccount"/>
           <include name="LWUtility"/>
         </methods>
-      </class> <!-- com.LW.test.CheckMyAccountUI -->
+      </class> <!-- com.LW.test.Checklist5 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

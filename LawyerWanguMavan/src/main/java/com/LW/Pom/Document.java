@@ -27,7 +27,17 @@ public class Document {
 	
 	@FindBy(xpath = "//a[.=\"My Account\"]")
 	private WebElement MyAccount;
+	
+	@FindBy(xpath = "//img[@class=\"logoImg\"]")
+	private WebElement logo;
 
+	@FindBy(id = "cart-icon")
+	private WebElement cart;
+	
+	@FindBy(xpath = "//canvas[contains(@id,\"canvas\")] ")
+	private WebElement canvas;
+	
+	
 	public Document(WebDriver driver) {
 	PageFactory.initElements(driver, this);	
 	}
@@ -57,6 +67,16 @@ public class Document {
 		
 		MyAccount.click();
 			}
+			public void LWLogo() throws InterruptedException {
+				
+				logo.click();
+			}
+			
+			public void ClickCart() {
+				cart.click();
+			}
+			
+			
 
 }
 	

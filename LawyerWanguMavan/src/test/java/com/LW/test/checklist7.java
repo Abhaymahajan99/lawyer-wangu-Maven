@@ -4,9 +4,16 @@ import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.AssertJUnit;
 import org.testng.Reporter;
@@ -29,17 +36,38 @@ public class checklist7  extends LWBaseClass{
 		Document dc = new Document(driver);
 		
 		dc.Doc();
+		
 		String c="window.scrollTo(0,document.body.scrollHeight)";
+		
 		js.executeScript(c);
+		Thread.sleep(500);
+		WebElement ProceedtoPurchaseButton = driver.findElement(By.xpath("//input[@value=\"Proceed to Purchase\"]"));
+		Thread.sleep(500);
+		Object button = js.executeScript("arguments[0].scrollIntoView(true);", ProceedtoPurchaseButton);
+		
 		dc.ProceedtoPurchaseButton();
+		dc.LWLogo();
+		dc.ClickCart();
+		
 		dc.Edit();
-		Thread.sleep(1000);
-		String d="window.scrollTo(0,document.body.scrollHeight)";
-		js.executeScript(d);
-		Thread.sleep(1000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@value=\"Proceed to Purchase\"]")));
-		String e="window.scrollTo(0,document.body.scrollHeight)";
+		
+		
+		Thread.sleep(1000); 
+		WebElement doc = driver.findElement(By.xpath("//canvas[contains(@id,\"canvas\")] "));
+		
+		wait.until(ExpectedConditions.visibilityOf(doc));
+		WebElement ProceedtoPurchaseButton2 = driver.findElement(By.xpath("//input[@value=\"Proceed to Purchase\"]"));
+		
+		Object button2 = js.executeScript("arguments[0].scrollIntoView(true);", ProceedtoPurchaseButton2);
+		
+		//String d="window.scrollTo(0,document.body.scrollHeight)";
+		Thread.sleep(500);
+		
 		dc.ProceedtoPurchaseButton();
+		
+		
+		
+		
 		dc.MyAccount();
 		
 		Reporter.log("Login as individual user,check the document till preview page woking fine",true);

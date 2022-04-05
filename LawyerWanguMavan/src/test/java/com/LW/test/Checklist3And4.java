@@ -4,6 +4,12 @@ import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
@@ -52,10 +58,12 @@ public class Checklist3And4 extends LWBaseClass {
 		driver.get(Url);
 		
 		d.myaccount();
+		
 		Reporter.log("backend EQuestionnaire For New And OldDocument working fine",true);
 		AssertJUnit.assertTrue(true == true);
-		sa.assertAll(); 
+		
 		Thread.sleep(1000);
+		sa.assertAll(); 
 	}
 	
 

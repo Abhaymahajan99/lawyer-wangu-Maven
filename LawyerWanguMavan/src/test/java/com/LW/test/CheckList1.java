@@ -1,6 +1,13 @@
 package com.LW.test;
 
 import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
@@ -14,7 +21,7 @@ import com.LW.Pom.InternalLogin;
 import com.LW.generics.LWBaseClass;
 
 public class CheckList1 extends LWBaseClass {
-	@Test()
+	@Test(priority=1)
 	public void Checklist1_InternalLogin() throws InterruptedException, IOException {
 		
 		ExtentTest = extent.startTest(" Checklist1_InternalLogin");
@@ -25,6 +32,8 @@ public class CheckList1 extends LWBaseClass {
 		String un = f.getPropertyData("inusername");
 		String pw =f.getPropertyData("inpassword"); 
 		InternalLogin ig=new InternalLogin(driver); 
+		ig.ClickCorporate();
+		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//input[@name=\"login_username\"]")));
 		ig.setLogin(un,pw);
 		
 		ig.myacc();

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class InternalLogin {
 
@@ -28,10 +29,13 @@ public class InternalLogin {
 		PageFactory.initElements(driver, this);
 	}
 
-
+public void ClickCorporate() {
+	Internal.click();
+	
+}
 	public void setLogin(String un, String pw) {
 
-		Internal.click();
+		
 		login.click();
 		login.sendKeys(un);
 		password.sendKeys(pw);

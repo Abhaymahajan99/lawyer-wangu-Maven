@@ -116,8 +116,9 @@ public class LWBaseClass {
 		Thread.sleep(500);
 		extent.flush();
 		extent.close();
-		
 		driver.close();
+		Thread.sleep(200);
+		sa.assertAll(); 
 
 	}
 

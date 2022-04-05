@@ -1,12 +1,21 @@
 package com.LW.test;
 
 import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.AssertJUnit;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
@@ -165,11 +174,13 @@ public class Checklist5 extends LWBaseClass {
 		Reporter.log("Incomplete Registration",true);
 		Thread.sleep(1000);
 
-		WebElement Reports7 = driver.findElement(By.xpath("//span[.=\"Reports\"]"));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[.=\"Reports\"]")));
+		
+		WebElement Reports9 = driver.findElement(By.xpath("//span[.=\"Reports\"]"));
 		WebElement GuestUser1 = driver.findElement(By.xpath("//span[.=\"Guest User\"]"));
-		WebElement AbandonedCartUsers = driver.findElement(By.xpath("//a[.=\"AbandonedCartUsers\"]"));
+		WebElement AbandonedCartUsers = driver.findElement(By.xpath("//a[.=\"Abandoned Cart Users\"]"));
 		Actions actions15 = new Actions(driver);
-		actions15.moveToElement(Reports7).moveToElement(GuestUser1).moveToElement(AbandonedCartUsers).click().build().perform();
+		actions15.moveToElement(Reports9).moveToElement(GuestUser1).moveToElement(AbandonedCartUsers).click().build().perform();
 		Reporter.log("Abandoned Cart Users",true);
 		Thread.sleep(1000);
 
@@ -178,9 +189,15 @@ public class Checklist5 extends LWBaseClass {
 		Actions actions16 = new Actions(driver);
 		actions16.moveToElement(Reports8).moveToElement(DocumentSellingReport).click().build().perform();
 		Reporter.log("DocumentSellingReport",true);
-
+		
+		String Url = f.getPropertyData("url");
+		driver.get(Url);
+		
+		Reporter.log("BackEnd Basic Functionality working fine",true);
+		AssertJUnit.assertTrue(true == true);
+		
 	    d.myaccount();
-
+	    sa.assertAll(); 
 
 	}
 	

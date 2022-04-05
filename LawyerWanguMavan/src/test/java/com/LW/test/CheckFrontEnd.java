@@ -2,6 +2,9 @@ package com.LW.test;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
@@ -13,8 +16,8 @@ import com.LW.Pom.Logout;
 import com.LW.Pom.MyAccount;
 import com.LW.generics.LWBaseClass;
 
-public class CheckMyAccountUI extends LWBaseClass {
-	@Test(priority=5)
+public class CheckFrontEnd extends LWBaseClass {
+	@Test(priority=5, groups={"Smoke Testing"})
 	public void TestMyAccount() throws Throwable  { 
 	ExtentTest = extent.startTest(" TestsMyAccount");
 	
@@ -44,7 +47,9 @@ public class CheckMyAccountUI extends LWBaseClass {
 	Reporter.log("Document cart pass",true);
 	Thread.sleep(1000);
 	
-	Reporter.log("UI My Account detail",true);
+	Reporter.log("CheckFrontEnd",true);
+	
+sa.assertAll(); 
 }}
 
 

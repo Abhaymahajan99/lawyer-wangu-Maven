@@ -1,6 +1,13 @@
 package com.LW.test;
 
 import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
@@ -27,6 +34,9 @@ public class checklist8 extends LWBaseClass {
 		String un = f.getPropertyData("inusername");
 		String pw =f.getPropertyData("inpassword"); 
 		InternalLogin ig=new InternalLogin(driver); 
+		
+		ig.ClickCorporate();
+		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//input[@name=\"login_username\"]")));
 		ig.setLogin(un,pw);
 
 		//driver.get("https://devstaging.lawyerwangu.com/lw/auto");

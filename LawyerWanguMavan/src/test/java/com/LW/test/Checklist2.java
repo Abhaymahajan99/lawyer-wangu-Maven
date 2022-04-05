@@ -4,6 +4,12 @@ import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.testng.AssertJUnit;
@@ -49,6 +55,7 @@ public class Checklist2 extends LWBaseClass{
 		//driver.get("https://devstaging.lawyerwangu.com");
 
 		d.myaccount();
+		
 		Reporter.log("backend login working fine",true);
 		AssertJUnit.assertTrue(true == true);
 		sa.assertAll(); 
