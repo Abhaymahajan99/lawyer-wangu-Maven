@@ -46,6 +46,8 @@ public class Document {
 		FullName.sendKeys("Test user");
 		Amount.sendKeys("5000");
 		Thread.sleep(2000);
+		}
+		public void nextbutton() throws InterruptedException {	
 		nextbutton.click();
 		Thread.sleep(2000);
 	}

@@ -98,6 +98,7 @@ public class backend {
 	public void Document() throws InterruptedException {
 	
 		Document.click();
+		Thread.sleep(500);
 		DocumentExit.click();
 		logo.click();
 }

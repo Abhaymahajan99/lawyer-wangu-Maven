@@ -20,7 +20,12 @@ public class Logout {
 	}
 	public void Setlogout() throws InterruptedException
 	{
+		
 		SignOut.click();
+	}
+		public void logins() throws InterruptedException
+		{
+				
 		login.click();
 		Thread.sleep(1000);
 	}

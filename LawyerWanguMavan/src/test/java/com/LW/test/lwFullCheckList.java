@@ -50,6 +50,7 @@ public class lwFullCheckList extends LWBaseClass {
 		InternalLogin ig=new InternalLogin(driver); 
 		ig.ClickCorporate();
 		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//input[@name=\"login_username\"]")));
+
 		ig.setLogin(un,pw);
 
 		ig.myacc();
@@ -110,23 +111,20 @@ public class lwFullCheckList extends LWBaseClass {
 
 	@Test(priority=2, groups={"Smoke"})
 	public void Checklist3and4_backend_EQuestionnaireForNewAndOldDocument() throws InterruptedException, IOException   {
-
+		
 		ExtentTest = extent.startTest(" Checklist3and4_backend_EQuestionnaireForNewAndOldDocument");
-
-		// admin web link 
 
 		//driver.get("https://devstaging.lawyerwangu.com/lw/admin/login");
 		String adminUrl = f.getPropertyData("adminUrl");
-
 		driver.get(adminUrl);
-
+		
 		Thread.sleep(500);
-
+		
 		String un = f.getPropertyData("AdminUserName");
 		String pw =f.getPropertyData("AdminPassword"); 
 		backend d=new backend(driver);
 		d.adminlogin(un, pw);
-
+		
 		WebElement catalog = driver.findElement(By.xpath("//li[@id=\"catalog_module\"]"));
 		WebElement Products = driver.findElement(By.xpath("//li[.=\"Products\"]"));
 
@@ -134,21 +132,26 @@ public class lwFullCheckList extends LWBaseClass {
 
 		//Performing the mouse hover action on the target element.
 		action.moveToElement(catalog).moveToElement(Products).click().build().perform();
-
+		
 		d.EQuestionnaire();
+		
+		String c="window.scrollTo(0,document.body.scrollHeight)";
+		js.executeScript(c);
+		
 		d.OldDocumentEQuestionnaire();
-
-		Thread.sleep(1000);
+		
+		Thread.sleep(3000);
 		//driver.get("https://devstaging.lawyerwangu.com");
-
 		String Url = f.getPropertyData("url");
 		driver.get(Url);
-
+		
 		d.myaccount();
+		
 		Reporter.log("backend EQuestionnaire For New And OldDocument working fine",true);
 		AssertJUnit.assertTrue(true == true);
-		sa.assertAll(); 
+		
 		Thread.sleep(1000);
+		sa.assertAll(); 
 	}
 
 	@Test(priority=6, groups={"Smoke"})
@@ -335,6 +338,9 @@ public class lwFullCheckList extends LWBaseClass {
 		Document dc = new Document(driver);
 
 		dc.Doc();
+		String b="window.scrollTo(0,document.body.scrollHeight)";
+		js.executeScript(b);
+		dc.nextbutton();
 
 		String c="window.scrollTo(0,document.body.scrollHeight)";
 
@@ -356,7 +362,9 @@ public class lwFullCheckList extends LWBaseClass {
 
 		wait.until(ExpectedConditions.visibilityOf(doc));
 		WebElement ProceedtoPurchaseButton2 = driver.findElement(By.xpath("//input[@value=\"Proceed to Purchase\"]"));
+
 		Object button2 = js.executeScript("arguments[0].scrollIntoView(true);", ProceedtoPurchaseButton2);
+
 		//String d="window.scrollTo(0,document.body.scrollHeight)";
 		Thread.sleep(500);
 
@@ -376,8 +384,8 @@ public class lwFullCheckList extends LWBaseClass {
 	}
 
 	@Test(priority=4, groups={"Smoke"})
-public void Cheklist8_InternalUser_TillPreviewPage() throws InterruptedException, IOException  { 
-		
+	public void Cheklist8_InternalUser_TillPreviewPage() throws InterruptedException, IOException  { 
+
 		ExtentTest = extent.startTest(" Cheklist8_InternalUser_TillPreviewPage");
 
 		String c="window.scrollTo(0,document.body.scrollHeight)";
@@ -386,7 +394,7 @@ public void Cheklist8_InternalUser_TillPreviewPage() throws InterruptedException
 		String un = f.getPropertyData("inusername");
 		String pw =f.getPropertyData("inpassword"); 
 		InternalLogin ig=new InternalLogin(driver); 
-		
+
 		ig.ClickCorporate();
 		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//input[@name=\"login_username\"]")));
 		ig.setLogin(un,pw);
@@ -396,33 +404,34 @@ public void Cheklist8_InternalUser_TillPreviewPage() throws InterruptedException
 		driver.get(DocumentUrl);
 
 		Document dc = new Document(driver);
-		
+
 		dc.Doc();
-		String a="window.scrollTo(0,document.body.scrollHeight)";
-		js.executeScript(a);
+		String z="window.scrollTo(0,document.body.scrollHeight)";
+		js.executeScript(z);
+
+		dc.nextbutton();
+		Thread.sleep(1000);
+		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//input[@value=\"Proceed to Purchase\"]")));
+
 		dc.ProceedtoPurchaseButton();
 		Reporter.log("Login as internal user,check the document till preview page woking fine",true);
 		dc.Edit();
-		
+
 		Thread.sleep(1000);
-		
+
 		String d="window.scrollTo(0,document.body.scrollHeight)";
 		js.executeScript(d);
-		
+
 		dc.ProceedtoPurchaseButton();
-		
+
 		dc.MyAccount();
 		Reporter.log("Document is in cart, click on edit from the cart , Its working fine",true);
 		Thread.sleep(1000);
-		
+
 		AssertJUnit.assertTrue(true == true);
 		sa.assertAll(); 
 
-
-
 	}
-
-
 	@Test(enabled=false,groups={"Regression"})
 	public void TestMyAccount() throws Throwable  { 
 		ExtentTest = extent.startTest(" TestsMyAccount");

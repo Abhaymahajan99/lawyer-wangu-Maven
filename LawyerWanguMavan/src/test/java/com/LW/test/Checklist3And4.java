@@ -50,6 +50,9 @@ public class Checklist3And4 extends LWBaseClass {
 		
 		d.EQuestionnaire();
 		
+		String c="window.scrollTo(0,document.body.scrollHeight)";
+		js.executeScript(c);
+		
 		d.OldDocumentEQuestionnaire();
 		
 		Thread.sleep(3000);

@@ -3,16 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.LW.test.Checklist5">
+      <class name="com.LW.test.lwFullCheckList">
         <methods>
-          <include name="Checklist5_BackEndBasicFunctionality"/>
+          <include name="Cheklist8_InternalUser_TillPreviewPage"/>
+          <include name="Checklist3and4_backend_EQuestionnaireForNewAndOldDocument"/>
           <include name="closeBrowser"/>
           <include name="login"/>
           <include name="openBrowser"/>
+          <include name="Checklist5_BackEndBasicFunctionality"/>
           <include name="logout"/>
+          <include name="Cheklist7_IndividualUser_TillPreviewPage"/>
           <include name="LWUtility"/>
         </methods>
-      </class> <!-- com.LW.test.Checklist5 -->
+      </class> <!-- com.LW.test.lwFullCheckList -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

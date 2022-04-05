@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -51,7 +52,7 @@ public class LWBaseClass {
 
 	static {
 
-		System.setProperty("webdriver.chrome.driver", "/Users/activemac03/Downloads/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Active37\\git\\lawyer-wangu-Maven\\LawyerWanguMavan\\src\\main\\resources\\drivers\\chromedriver.exe");
 		System.setProperty("webdriver.gecko.driver", "/driver/geckodriver");
 		System.getProperty("webdriver.edge.driver", "/driver/msedgedriver");
 	}
@@ -114,6 +115,7 @@ public class LWBaseClass {
 	public void closeBrowser() throws InterruptedException {
 		
 		Thread.sleep(500);
+		
 		extent.flush();
 		extent.close();
 		driver.close();
@@ -149,8 +151,9 @@ public class LWBaseClass {
 		
 	  Thread.sleep(1000);
 	  String un = f.getPropertyData("username");
-	  String pw =f.getPropertyData("password"); 
+	  String pw =f.getPropertyData("password");
 	  Login l=new Login(driver); 
+	 
 	  l.setLogin(un,pw);
 	  
 	  Thread.sleep(4000);
@@ -192,7 +195,12 @@ public class LWBaseClass {
 	@AfterMethod
 	public void logout() throws InterruptedException  {
 		Logout lg=new Logout(driver);
+		Thread.sleep(300);
+		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//a[.=\"Sign Out\"]")));
 		lg.Setlogout();
+		js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//a[.=\"Log In\"]")));
+		
+		lg.logins();
 
 	}
 
