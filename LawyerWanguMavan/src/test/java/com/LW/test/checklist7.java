@@ -60,6 +60,7 @@ public class checklist7  extends LWBaseClass{
 
 		wait.until(ExpectedConditions.visibilityOf(doc));
 		
+		
 		WebElement ProceedtoPurchaseButton2 = driver.findElement(By.xpath("//input[@value=\"Proceed to Purchase\"]"));
 
 		Object button2 = js.executeScript("arguments[0].scrollIntoView(true);", ProceedtoPurchaseButton2);

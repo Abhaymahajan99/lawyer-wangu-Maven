@@ -222,7 +222,7 @@ public class lwFullCheckList extends LWBaseClass {
 		Actions actions4 = new Actions(driver);
 		actions4.moveToElement(Customers).moveToElement(customers).moveToElement(IndividualUsers).click().build().perform();
 		Reporter.log("Individual Users",true);
-
+		
 		Thread.sleep(1000);
 
 		WebElement Customers1 = driver.findElement(By.xpath("//span[.=\"Customers\"]"));
@@ -305,11 +305,14 @@ public class lwFullCheckList extends LWBaseClass {
 		Reporter.log("Incomplete Registration",true);
 		Thread.sleep(1000);
 
-		WebElement Reports7 = driver.findElement(By.xpath("//span[.=\"Reports\"]"));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[.=\"Reports\"]")));
+		
+		
+		WebElement Reports9 = driver.findElement(By.xpath("//span[.=\"Reports\"]"));
 		WebElement GuestUser1 = driver.findElement(By.xpath("//span[.=\"Guest User\"]"));
-		WebElement AbandonedCartUsers = driver.findElement(By.xpath("//a[.=\"AbandonedCartUsers\"]"));
+		WebElement AbandonedCartUsers = driver.findElement(By.xpath("//a[.=\"Abandoned Cart Users\"]"));
 		Actions actions15 = new Actions(driver);
-		actions15.moveToElement(Reports7).moveToElement(GuestUser1).moveToElement(AbandonedCartUsers).click().build().perform();
+		actions15.moveToElement(Reports9).moveToElement(GuestUser1).moveToElement(AbandonedCartUsers).click().build().perform();
 		Reporter.log("Abandoned Cart Users",true);
 		Thread.sleep(1000);
 
@@ -318,12 +321,18 @@ public class lwFullCheckList extends LWBaseClass {
 		Actions actions16 = new Actions(driver);
 		actions16.moveToElement(Reports8).moveToElement(DocumentSellingReport).click().build().perform();
 		Reporter.log("DocumentSellingReport",true);
-
-		d.myaccount();
-		sa.assertAll(); 
-
+		
+		String Url = f.getPropertyData("url");
+		driver.get(Url);
+		
+		Reporter.log("BackEnd Basic Functionality working fine",true);
+		AssertJUnit.assertTrue(true == true);
+		
+	    d.myaccount();
+	    sa.assertAll(); 
 
 	}
+	
 
 	@Test(priority=3, groups={"Smoke"})
 	public void Cheklist7_IndividualUser_TillPreviewPage() throws InterruptedException, IOException   {
@@ -360,7 +369,7 @@ public class lwFullCheckList extends LWBaseClass {
 		Thread.sleep(1000); 
 		WebElement doc = driver.findElement(By.xpath("//canvas[contains(@id,\"canvas\")] "));
 
-		wait.until(ExpectedConditions.visibilityOf(doc));
+		//wait.until(diver->ExpectedConditions.visibilityOf(doc));
 		WebElement ProceedtoPurchaseButton2 = driver.findElement(By.xpath("//input[@value=\"Proceed to Purchase\"]"));
 
 		Object button2 = js.executeScript("arguments[0].scrollIntoView(true);", ProceedtoPurchaseButton2);

@@ -5,16 +5,11 @@
     <classes>
       <class name="com.LW.test.lwFullCheckList">
         <methods>
-          <include name="Cheklist8_InternalUser_TillPreviewPage"/>
-          <include name="Checklist3and4_backend_EQuestionnaireForNewAndOldDocument"/>
-          <include name="Checklist2_backend"/>
           <include name="closeBrowser"/>
           <include name="login"/>
           <include name="openBrowser"/>
           <include name="Checklist5_BackEndBasicFunctionality"/>
-          <include name="Checklist1_InternalLogin"/>
           <include name="logout"/>
-          <include name="Cheklist7_IndividualUser_TillPreviewPage"/>
           <include name="LWUtility"/>
         </methods>
       </class> <!-- com.LW.test.lwFullCheckList -->

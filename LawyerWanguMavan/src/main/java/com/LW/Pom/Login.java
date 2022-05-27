@@ -35,6 +35,8 @@ public class Login {
 	public Login(WebDriver driver) {
 	PageFactory.initElements(driver, this);	
 	}
+	
+	
 	public void setLogin(String un, String pw) {
 		
 		if (accept_cookie.isDisplayed()) {

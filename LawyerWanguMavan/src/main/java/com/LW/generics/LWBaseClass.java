@@ -3,6 +3,7 @@ package com.LW.generics;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +15,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
@@ -33,6 +35,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 
 
@@ -47,14 +51,19 @@ public class LWBaseClass {
 	public Actions actions ;
 	public ExtentReports extent;
 	public ExtentTest ExtentTest;
-
 	public LWFilelibrary f = new LWFilelibrary();
 
 	static {
-
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Active37\\git\\lawyer-wangu-Maven\\LawyerWanguMavan\\src\\main\\resources\\drivers\\chromedriver.exe");
-		System.setProperty("webdriver.gecko.driver", "/driver/geckodriver");
-		System.getProperty("webdriver.edge.driver", "/driver/msedgedriver");
+		
+		WebDriverManager.chromedriver().setup();
+		
+		WebDriverManager.firefoxdriver().setup();
+		
+		WebDriverManager.edgedriver().setup();
+		
+		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Active37\\git\\lawyer-wangu-Mavens\\LawyerWanguMavan\\src\\main\\resources\\drivers\\chromedriver.exe");
+		//System.setProperty("webdriver.gecko.driver", "/driver/geckodriver");
+		//System.getProperty("webdriver.edge.driver", "/driver/msedgedriver");
 	}
 
 
@@ -69,40 +78,48 @@ public class LWBaseClass {
 		extent.addSystemInfo("OS", "Mac OS X");
 		extent.addSystemInfo("Enviroment", "QA");
 		extent.addSystemInfo("Java Version", "14.0.2");
-
+		
 		options = new ChromeOptions();
 
 		options1 = new FirefoxOptions();
 
 		options1.addArguments("--disable-notifications");
 		options.addArguments("--disable-notifications");
-
+		
 		String url = f.getPropertyData("url");
 
-		String browser = f.getPropertyData("browser");
-
-		if (browser.equalsIgnoreCase("chrome")) {
-			driver = new ChromeDriver(options);
-
-		}
-
-		else if (browser.equalsIgnoreCase("firefox")) {
-
-			driver = new FirefoxDriver(options1);
-
-		} else if (browser.equals("safari")) {
-			//driver = new EdgeDriver();
-			driver = new SafariDriver();
-		}
-
+		/*
+		 * String browser = f.getPropertyData("browser");
+		 * 
+		 * if (browser.equalsIgnoreCase("chrome")) {
+		 * 
+		 * driver = new ChromeDriver(options);
+		 * 
+		 * }
+		 * 
+		 * else if (browser.equalsIgnoreCase("firefox")) {
+		 * 
+		 * driver = new FirefoxDriver(options1);
+		 * 
+		 * } else if (browser.equals("safari")) { driver = new EdgeDriver(); //driver =
+		 * new SafariDriver(); }
+		 */
+		driver = new ChromeDriver();
+		//driver = new EdgeDriver();
+		//driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS); //Selenium 4
+		
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));//Selenium 4
 
 		actions = new Actions(driver);
-		wait = new WebDriverWait(driver, 10);
-
-
+		
+		wait = new WebDriverWait(driver,20);//Selenium 3
+		
+		//wait = new WebDriverWait(driver,Duration.ofSeconds(10));//Selenium 4
+		
 		js = (JavascriptExecutor) driver;
 
 		sa = new SoftAssert();

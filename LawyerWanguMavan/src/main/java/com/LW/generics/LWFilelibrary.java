@@ -22,7 +22,7 @@ public class LWFilelibrary {
 	
 	public String getPropertyData(String key) throws IOException {
 		
-	FileInputStream fis=new FileInputStream("C:\\Users\\Active37\\git\\lawyer-wangu-Maven\\LawyerWanguMavan\\src\\test\\resources\\Data\\commondata.properties1");
+	FileInputStream fis=new FileInputStream("C:\\Users\\Active37\\git\\lawyer-wangu-Mavens\\LawyerWanguMavan\\src\\test\\resources\\Data\\commondata.properties1");
 	
 	Properties p=new Properties();
 	

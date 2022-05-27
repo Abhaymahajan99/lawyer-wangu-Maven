@@ -176,6 +176,7 @@ public class Checklist5 extends LWBaseClass {
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[.=\"Reports\"]")));
 		
+		
 		WebElement Reports9 = driver.findElement(By.xpath("//span[.=\"Reports\"]"));
 		WebElement GuestUser1 = driver.findElement(By.xpath("//span[.=\"Guest User\"]"));
 		WebElement AbandonedCartUsers = driver.findElement(By.xpath("//a[.=\"Abandoned Cart Users\"]"));
