@@ -3,17 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.LW.test.lwFullCheckList">
+      <class name="com.LW.test.Popup_Functionality_Individual_LogIn">
         <methods>
-          <include name="Cheklist8_InternalUser_TillPreviewPage"/>
-          <include name="closeBrowser"/>
-          <include name="login"/>
-          <include name="openBrowser"/>
-          <include name="Checklist5_BackEndBasicFunctionality"/>
-          <include name="logout"/>
-          <include name="LWUtility"/>
+          <include name="Popup_Individual_LogIn" invocation-numbers="1 2"/>
         </methods>
-      </class> <!-- com.LW.test.lwFullCheckList -->
+      </class> <!-- com.LW.test.Popup_Functionality_Individual_LogIn -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
