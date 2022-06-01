@@ -25,21 +25,26 @@ public class backend {
 	private WebElement EQues;
 	
 	@FindBy(xpath = "//a[.=\"STEP 1\"]")
+	
 	private WebElement STEP;
 	
 	@FindBy(xpath = "//button[@id='cancel_edit']")
+	
 	private WebElement Exit;
 	
 	@FindBy(xpath = "//a[.=\">>\"]")
 	private WebElement lastpage;
 	
 	@FindBy(xpath = "(//a[@class=\"edit_product_que\"])[1]")
+	
 	private WebElement EQues2;
 	
 	@FindBy(xpath = "//a[.=\"STEP 1\"]")
+	
 	private WebElement STEP2;
 	
 	@FindBy(xpath = "//button[@id='cancel_edit']")
+	
 	private WebElement Exit2;
 	
 	@FindBy(xpath = "(//a[.=\"Document\"])[1]")
